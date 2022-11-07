@@ -64,252 +64,54 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Widget createRow(int offset) {
+    return Row(children: <Widget>[
+      createExpanded(0 + offset),
+      const Spacer(),
+      createExpanded(1 + offset),
+      const Spacer(),
+      createExpanded(2 + offset),
+      const Spacer(),
+      createExpanded(3 + offset)
+    ]);
+  }
+
+  Widget createExpanded(inp) {
+    return Expanded(
+      child: Visibility(
+        visible: x[inp],
+        child: IconButton(
+          splashRadius: 85,
+          iconSize: 150,
+          onPressed: _countAndVis,
+          icon: Image.asset(
+            'assets/pumpkin.png',
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    List<Widget> arr = [];
+    arr.add(const Center(
+        child: Text("You have clicked", style: TextStyle(fontSize: 30))));
+    arr.add(Center(child: Text('$_counter', style: TextStyle(fontSize: 30))));
+    arr.add(const Center(
+        child:
+            Center(child: Text("pumpkins!", style: TextStyle(fontSize: 30)))));
+    for (int i = 0; i < 4; i++) {
+      arr.add(createRow(4 * i));
+    }
     if (!display) {
       return Scaffold(
         appBar: AppBar(
           title: Center(child: Text(widget.title)),
         ),
         body: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
-              Widget>[
-            const Center(
-                child:
-                    Text("You have clicked", style: TextStyle(fontSize: 30))),
-            Center(child: Text('$_counter', style: TextStyle(fontSize: 30))),
-            const Center(
-                child: Center(
-                    child: Text("pumpkins!", style: TextStyle(fontSize: 30)))),
-            Row(children: <Widget>[
-              Expanded(
-                child: Visibility(
-                  visible: x[0],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[1],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[2],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[3],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-            ]),
-            Row(children: <Widget>[
-              Expanded(
-                child: Visibility(
-                  visible: x[4],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[5],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[6],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[7],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-            ]),
-            Row(children: <Widget>[
-              Expanded(
-                child: Visibility(
-                  visible: x[8],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[9],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[10],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[11],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-            ]),
-            Row(children: <Widget>[
-              Expanded(
-                child: Visibility(
-                  visible: x[12],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[13],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[14],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-              const Spacer(),
-              Expanded(
-                child: Visibility(
-                  visible: x[15],
-                  child: IconButton(
-                    splashRadius: 85,
-                    iconSize: 150,
-                    onPressed: _countAndVis,
-                    icon: Image.asset(
-                      'assets/pumpkin.png',
-                    ),
-                  ),
-                ),
-              ),
-            ]),
-          ]),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center, children: arr),
         ),
       );
     } else {
